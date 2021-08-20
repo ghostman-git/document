@@ -914,6 +914,42 @@ firewall-cmd --zone=public --add-port=8080/tcp --permanent
 
 # 重启服务
 systemctl restart firewalld.service
+# 开机禁用
+systemctl disable firewalld
+# 开机启用
+systemctl enable firewalld
+```
+
+```shell
+# ubuntu ufw
+
+# 状态
+sudo ufw status
+
+# 开启防火墙
+sudo ufw enable
+# 关闭防火墙
+sudo ufw disable
+
+# 外来访问默认允许/拒绝
+sudo ufw default allow/deny
+# 允许/拒绝访问80端口
+# 80后可跟/tcp或/udp，表示tcp或udp封包
+sudo ufw allow/deny 80
+
+# ufw从/etc/services中找到对应service的端口进行过滤。
+sudo ufw allow/deny servicename
+
+# 允许此IP访问所有的本机端口
+sudo ufw allow from 192.168.1.100
+# 允许自10.0.1.0/10的tcp封包访问本机的25端口
+sudo ufw allow proto tcp from 10.0.1.0/10 to 本机ip <port 25>
+
+# 删除以前定义的"允许/拒绝访问80端口"的规则
+sudo ufw delete allow/deny 80
+
+# 重置防火墙
+sudo ufw reset
 ```
 
 
