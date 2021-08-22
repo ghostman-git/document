@@ -24,7 +24,7 @@ log-bin=mysql-bin
 show variables like '%log_bin%'; 
 ```
 
-![image-20210721143635427](README.assets\image-20210721143635427.png)
+![image-20210721143635427](README.assets/image-20210721143635427.png)
 
 > PS: 如果log_bin为OFF，需要docker容器内执行
 
@@ -38,7 +38,7 @@ chmod 644 mysql.cnf
 show master status;
 ```
 
-![image-20210721143752014](README.assets\image-20210721143752014.png)
+![image-20210721143752014](README.assets/image-20210721143752014.png)
 
 ## 从库
 
@@ -73,7 +73,7 @@ start slave;
 show slave status;
 ```
 
-![image-20210721144213558](README.assets\image-20210721144213558.png)
+![image-20210721144213558](README.assets/image-20210721144213558.png)
 
 ## 资料文件
 
@@ -125,7 +125,7 @@ symbolic-links=0
 
 readwrite-splitting
 
-![image-20210721144454969](README.assets\image-20210721144454969.png)
+![image-20210721144454969](README.assets/image-20210721144454969.png)
 
 2. Gradle dependencies
 
