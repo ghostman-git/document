@@ -1,0 +1,45 @@
+#nav {
+    width: 300px;
+    background-color: #c5c5cb;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 1em;
+    line-height: 35px;
+    /*background-color: #cb0d0d;*/
+    /*颜色 图片 图片位置 平铺方式*/
+    background: #cb0d0d url("../images/icon_down.png") 270px 10px no-repeat;
+}
+
+/*
+list-style:
+    none    去掉原点
+    circle  空心园
+    decimal 数字
+    square  正方形
+*/
+ul {
+    background-color: #c5c5cb;
+}
+
+ul > li {
+    height: 30px;
+    list-style: none;
+    text-indent: .5em;
+    background-image: url("../images/icon_right.png");
+    background-repeat: no-repeat;
+    background-position: 230px 2px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+
+a:hover {
+    color: burlywood;
+    text-decoration: underline;
+}

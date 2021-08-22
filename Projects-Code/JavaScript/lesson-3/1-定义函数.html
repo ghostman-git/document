@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    'use strict'
+
+    // 方式一
+    function abs(x) {
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
+    }
+
+    // 方式二
+    let abs = function (x) {
+        if (typeof x !== 'number') {
+            throw 'x is not a number'
+        }
+    }
+</script>
+</body>
+</html>

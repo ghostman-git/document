@@ -1,0 +1,58 @@
+{
+  /*
+    include:
+     ** 任意目录
+     *  任意文件
+  */
+  "include": [
+    "./src/**/*"
+  ],
+  //"exclude": [],
+  "compilerOptions": {
+    // ESNext
+    // 编译ES版本
+    "target": "ES5",
+    // 指定模块化规范
+    //"module": "CommonJS",
+    // 指定项目中要用的库
+    //"lib": ["DOM"]
+    "outDir": "./dist",
+    // 合并到一个文件中
+    "outFile": "./dist/app.js",
+    // 默认不对js文件编译
+    "allowJs": false,
+    // 检查js语法是否规范
+    "checkJs": false,
+    // 是否移除注释
+    "removeComments": false,
+    // 不生成编译后的文件
+    "noEmit": false,
+    // 当有错误时不生成编译文件
+    "noEmitOnError": false,
+
+    // 所有严格检查的总开关
+    "strict": false,
+    // 严格模式
+    "alwaysStrict": false,
+    // 不允许隐式any类型
+    "noImplicitAny": true,
+    // 不允许隐式this
+    "noImplicitThis": true,
+    // 严格的空值检查
+    "strictNullChecks": true
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

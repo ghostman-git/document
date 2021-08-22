@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo > a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            /*line-height: 50px;*/
+            font: bold 20px/50px Arial;
+            text-align: center;
+            text-decoration: none;
+            margin-right: 5px;
+            border-radius: 25px;
+            background-color: chocolate;
+            color: aqua;
+        }
+
+        /*存在id属性的元素a*/
+        a[id] {
+            background-color: green;
+        }
+        /*id等于first的元素a*/
+        a[id="first"] {
+            background-color: brown;
+        }
+
+        /*
+        class含有links的元素
+        = 绝对等于
+        ~= 含有（以空格隔开的）
+        *= 匹配（匹配到字符即可）
+        ^= 以开头
+        $= 以结尾
+        */
+        a[class="links item first"] {
+            background-color: blueviolet;
+        }
+        a[class~="links"] {
+            background-color: blue;
+        }
+        a[class*="la"] {
+            background-color: chartreuse;
+        }
+        a[class^="link"] {
+            background-color: cadetblue;
+        }
+        a[class$="st"] {
+            background-color: darkkhaki;
+        }
+    </style>
+</head>
+<body>
+  <p class="demo">
+    <a href="https://www.baidu.com" class="links item first" id="first">1</a>
+    <a href="" class="links item">2</a>
+    <a href="page/1.html" class="links item">3</a>
+    <a href="page/2.html" class="links item">4</a>
+    <a href="a.pdf" class="links item">5</a>
+    <a href="bd.pdf" class="links item">6</a>
+    <a href="c.png" class="links item">7</a>
+    <a href="d.png" class="links item">8</a>
+    <a href="" class="links item">9</a>
+    <a href="https://www.taobao.com" class="links item last" id="last">10</a>
+  </p>
+</body>
+</html>

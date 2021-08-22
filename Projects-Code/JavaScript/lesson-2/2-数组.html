@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    'use strict';
+
+    let arr = [1, '2', true, null, '2'];
+    // 数组长度
+    console.log(arr.length);
+    // 如果给arr.length赋值，数组大小会发生变化
+    arr.length = 10;
+    console.log(arr.length); // 10
+
+    // 获取下标
+    console.log(arr.indexOf(2));
+    console.log(arr.indexOf('2'));
+
+    // 截取数组部分，返回一个新数组
+    console.log(arr.slice(1, 2)); // [1, 2)
+
+    // 尾部添加（push）、尾部删除（pop）
+    arr.push('c');
+    console.log(arr);
+    arr.pop();
+    console.log(arr);
+
+    // 头部添加（unshift），头部删除（shift）
+    arr.unshift('a', 'b');
+    console.log(arr);
+    arr.shift();
+    console.log(arr);
+
+    // 排序（sort）
+    arr.sort();
+    console.log(arr);
+
+    // 元素反转
+    arr.reverse();
+    console.log(arr);
+
+    // 数组拼接
+    // 返回新数组
+    const arr1 = arr.concat(['1', '23']);
+    console.log(arr1);
+
+    // join拼接
+    console.log(arr.join('-'));
+
+    // 多维数组
+    let a = [[1, 3], [3, 5], ['5', '6']];
+    console.log(a[1][1]); // 5
+
+    //
+    arr.fill(1);
+    console.log(arr);
+
+    // map
+    let numbers = [1, 4, 9];
+    const sqrt = numbers.map((value, index, array) => {
+        return Math.sqrt(value)
+    })
+    console.log(sqrt);
+
+    // find/findIndex
+    let items = [
+        {name: 'apples', quantity: 2},
+        {name: 'bananas', quantity: 0},
+        {name: 'cherries', quantity: 5}
+    ];
+    const item = items.find((value, index, obj) => {
+        return value.name === 'bananas';
+    })
+    console.log(item);
+    const index = items.findIndex((value, index, obj) => {
+        return value.name === 'bananas';
+    })
+    console.log(index);
+
+    // float([deep])
+    let arr11 = [1, 2, [3, 4]];
+    let arr111 = arr11.flat();
+    console.log(arr111);// [1, 2, 3, 4]
+
+    // some
+    console.log([2, 5, 8, 1, 4].some(x => x > 10));  // false
+    console.log([12, 5, 8, 1, 4].some(x => x > 10)); // true
+
+    // every
+    console.log([12, 5, 8, 130, 44].every(x => x >= 10)); // false
+    console.log([12, 54, 18, 130, 44].every(x => x >= 10)); // true
+
+    // filter
+    let filtered = [12, 5, 8, 130, 44].filter(x => x >= 10);
+    console.log(filtered);
+
+    // reduce
+    let sum = [0, 1, 2, 3, 4].reduce((accumulator, currentValue, currentIndex, array) => {
+        return accumulator + currentValue;
+    }, -1);
+    console.log(sum);
+
+    // splice
+    let myFish = ['angel', 'clown', 'mandarin'];
+    myFish.splice(1, 0, "drum"); // ["angel", "drum", "clown", "mandarin"]
+    // myFish.splice(1, 1, "drum"); // ["angel", "drum", "mandarin"]
+    myFish.splice(2, 1); // ["angel", "drum", "mandarin"]
+
+    // includes
+    [1, 2, 3].includes(2);     // true
+    [1, 2, 3].includes(4);     // false
+    [1, 2, 3].includes(3, 3);  // false
+    [1, 2, 3].includes(3, -1); // true
+    [1, 2, NaN].includes(NaN); // true
+</script>
+</body>
+</html>

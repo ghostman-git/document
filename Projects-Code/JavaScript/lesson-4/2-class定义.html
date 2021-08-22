@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    //
+    function Student(name) {
+        this.name = name;
+    }
+    Student.prototype.run = function () {
+        console.log(this.name + ' run...')
+    }
+    new Student('A').run();
+
+    // ES6后
+    class Student {
+        constructor(name) {
+            this.name = name
+        }
+
+        run() {
+            console.log(this.name + ' run...')
+        }
+    }
+    new Student('A').run();
+</script>
+</body>
+</html>

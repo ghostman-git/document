@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function xx() {
+        let x = 1;
+        x = x + 1;
+
+        // 内部函数可以访问外部函数的成员
+        function yy() {
+            let y = x + 2;
+        }
+
+        // 外部函数无法访问内部函数成员
+        let z = y + 3;
+    }
+
+    x = x + 2; // ReferenceError: x is not defined
+
+    xx();*/
+
+    // 内外互不干扰
+    function mm() {
+        let x = 1;
+
+        (function nn() {
+            let x = 'A';
+            console.log('inner-x: ', x);
+        })();
+
+        console.log('outer-x: ', x)
+    }
+    mm();
+
+    let x = 1;
+    function fn() {
+        console.log(x)
+    }
+    fn();
+    console.log(x);
+
+    console.log(x)
+    console.log(window.x)
+</script>
+</body>
+</html>

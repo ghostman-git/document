@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let user = {
+        name: 'JS',
+        age: 23,
+        sex: '男'
+    };
+    let jsonStr = JSON.stringify(user);
+    console.log(jsonStr);
+
+    let parseUser = JSON.parse(jsonStr);
+    console.log(parseUser);
+</script>
+</body>
+</html>

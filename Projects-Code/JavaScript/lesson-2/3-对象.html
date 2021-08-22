@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    let person = {
+        name: 'js',
+        age: 3,
+        email: '999293@qq.com',
+        score: 0
+    }
+
+    // 对象赋值
+    person.name = 'JavaScript';
+    console.log(person.name);
+
+    // 获取不存在的属性
+    console.log(person.haha);
+
+    // 动态删减属性
+    delete person.name;
+    console.log(person);
+
+    // 动态添加
+    person.haha = 'haha';
+    console.log(person);
+
+    // 判断属性是否存在
+    console.log('age' in person);
+    console.log('toString' in person);
+
+    // 判断属性是否自身所拥有
+    console.log(person.hasOwnProperty('age'));
+    console.log(person.hasOwnProperty('toString'));
+
+    for (let i = 0; i < ; i++) {
+        
+    }
+</script>
+</body>
+</html>

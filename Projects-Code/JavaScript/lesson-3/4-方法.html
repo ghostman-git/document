@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getAge() {
+        let year = new Date().getFullYear();
+        return year - this.birth;
+    }
+
+    let App = {
+        name: 'JS',
+        birth: 2000,
+        /*age: function () {
+            let year = new Date().getFullYear();
+            return year - this.birth;
+        }*/
+        age: getAge
+    }
+    //console.log(App.age());
+    console.log(getAge());
+    console.log(getAge.apply(App));
+</script>
+</body>
+</html>

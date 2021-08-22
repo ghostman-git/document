@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #nav {
+      /* 方案一：增加父级高度 */
+      /*height: 300px;*/
+      border: 1px solid green;
+
+      /* 方案三：overflow: hidden; */
+      /*overflow: hidden;*/
+    }
+
+    /* 方案四：在父级添加伪类 */
+    #nav:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    /* not(#|class)过滤 */
+    div:not(#nav):not(.clear) {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      float: left;
+    }
+
+    .clear {
+      /* 方案二：清除浮动 */
+      /*clear: both;*/
+    }
+  </style>
+</head>
+<body>
+<div id="nav">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div class="clear"></div>
+</div>
+</body>
+</html>

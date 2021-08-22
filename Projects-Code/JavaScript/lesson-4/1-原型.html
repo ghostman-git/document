@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Student = {
+        name: 'js',
+        age: 3,
+        run: function () {
+            console.log(this.name + ' run...')
+        }
+    }
+
+    let Bird = {
+        fly: function () {
+            console.log(this.name + ' run...')
+        }
+    }
+
+    let person = {
+        name: '小明'
+    }
+    //person.__proto__ = Student;
+    person.__proto__ = Bird;
+    person.fly()
+</script>
+</body>
+</html>

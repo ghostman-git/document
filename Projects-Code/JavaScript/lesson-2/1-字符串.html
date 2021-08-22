@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    // 单/双引号（优先单引号）
+    console.log('a' + "b");
+
+    // \转义字符
+    // \u：unicode字符
+    // \x：ascii字符
+    console.log('a\nb\tc\u4e2d\x41');
+
+    // 多行
+    let s = `
+        hello
+        js
+    `;
+    console.log(s);
+
+    // 模板字符串
+    let name = 'JavaScript';
+    const msg = `Hello, ${name}`;
+    console.log(msg);
+
+    // 字符串长度
+    console.log(name.length);
+
+    // 字符串的可变性
+    //name[0] = 1;
+    //console.log(name);
+
+    // 大小写转换
+    console.log(name.toUpperCase());
+    console.log(name.toLowerCase());
+
+    // 获取下标/位置
+    console.log(name.indexOf('S'));
+
+    // 截取字符串[m, n)
+    // 从第一个开始最最后一个
+    console.log(name.substring(1));
+    // [m, n) 从第一个开始到第五个(不包含第五个字符)
+    console.log(name.substring(1, 5));
+</script>
+</body>
+</html>

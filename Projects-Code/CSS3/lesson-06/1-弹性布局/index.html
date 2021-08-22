@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flex {
+            width: 800px;
+            height: 100px;
+            /* 弹性布局 */
+            display: flex;
+            /*
+            控制主轴（水平方向）对齐方式
+            flex-start：靠左对齐
+            center：居中对齐
+            flex-end：靠右对齐
+            space-between：两端对齐
+            space-evenly：分散对齐
+            space-around：跟space-evenly类似，但是左右两边的留白为平分空间的1/2.
+            */
+            justify-content: center;
+            /*
+            控制交叉轴方向（即垂直方向）上的对齐方式
+            stretch：自动把子元素拉伸成容器的高度
+            flex-start：靠上对齐
+            center：居中对齐
+            flex-end：靠下对齐
+            baseline：基线对齐（如果子元素文字尺寸和行高不同，则子元素会按照文字的基线进行对齐）
+            */
+            align-items: baseline;
+            /*
+            flex 支持按行排布，也支持按列排布。按列排布时，主轴和交叉轴换了方向
+            row
+            column
+            row-reverse|column-reverse：反向按行和列布局
+            */
+            flex-direction: row;
+            /*
+            子元素有固定宽度，并且超出了容器的宽度，还不允许收缩的话，那么可以使用flex-wrap属性来让元素进行折行排列
+            */
+            flex-wrap: wrap;
+            /*
+            如果 flex 容器开启了折行，那么两行及以上的内容可以通过align-content属性来控制各行之间在交叉轴上的排列规则，它的取值和 justify-content基本相同
+            */
+            align-content: center;
+        }
+
+        .flex > * {
+            width: 500px;
+        }
+
+        .flex1 {
+            background-color: #0093E9;
+            /*
+            子元素可以通过设置 align-self 来控制自己在交叉轴上的对齐方式
+            */
+            align-self: flex-start;
+            /*
+            空间占比
+            默认值是   0         1         auto
+                flex-grow、flex-shrink、lex-basis
+            */
+            flex: 3;
+        }
+
+        .flex2 {
+            font-size: 24px;
+            background-color: #cb0d0d;
+            /*
+            行模式下是子元素的高度，列模式下是宽度。
+            */
+            flex-basis: 100px;
+            width: 200px;
+        }
+
+        .flex3 {
+            background-color: #8000CC;
+            /*
+            flex 容器在有剩余空间的时候，子元素占据剩余空间的占比
+            */
+            flex-grow: 1;
+            /*
+            子元素的收缩：当它们的宽度超过 flex 容器之后，该如何进行收缩
+            数值越大，收缩程度也越大
+            */
+            flex-shrink: 1;
+        }
+
+        .flex4 {
+            background-color: #009399;
+        }
+
+        .flex5 {
+            background-color: #c5c5cc;
+        }
+    </style>
+</head>
+<body>
+<div class="flex">
+    <div class="flex1">Flex 1</div>
+    <div class="flex2">Flex 2</div>
+    <div class="flex3">Flex 3</div>
+    <div class="flex4">Flex 4</div>
+    <div class="flex5">Flex 5</div>
+</div>
+</body>
+</html>

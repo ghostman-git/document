@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 300px;
+            border: 1px solid red;
+        }
+
+        h2 {
+            font-size: 16px;
+            background-color: #0093E9;
+            line-height: 30px;
+            color: white;
+        }
+
+        form {
+            background-color: #0093E9;
+        }
+
+        /*div:nth-of-type(1) > input {
+            border: 2px solid black;
+        }*/
+        div:nth-of-type(1) input {
+            /*border: 2px solid black;*/
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+        }
+
+        div:nth-of-type(2) input {
+            border: 3px dotted green;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h2>会员登录</h2>
+    <form action="#">
+        <div>
+            <label>用户名：</label>
+            <input type="text"/>
+        </div>
+        <div>
+            <label>密码：</label>
+            <input type="password"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

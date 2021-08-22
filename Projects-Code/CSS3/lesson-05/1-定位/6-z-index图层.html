@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .content {
+            width: 350px;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            line-height: 25px;
+            border: 1px solid #000;
+        }
+
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .content ul {
+            position: relative;
+        }
+
+        .tip-text, .tip-bg {
+            position: absolute;
+            width: 350px;
+            height: 25px;
+            top: 254px;
+        }
+
+        .tip-text {
+            color: #FFF;
+            z-index: 1;
+        }
+
+        .tip-bg {
+            opacity: .5;
+            /* IE8及更早浏览器支持替代filter属性 */
+            /*filter: alpha(opacity=50);*/
+            background: #0093E9;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <ul>
+        <li><img src="./images/bg.png"/></li>
+        <li class="tip-text">学习CSS3</li>
+        <li class="tip-bg"></li>
+        <li>时间：2099-01-01</li>
+        <li>地点：月球一号基地</li>
+    </ul>
+</div>
+</body>
+</html>
