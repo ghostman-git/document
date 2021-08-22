@@ -1,6 +1,7 @@
 # HTML & CSS & JavaScript
 
 * [CSS3](CSS3/README.md)
+* [JavaScript](JavaScript/README.md)
 
 # Java
 
