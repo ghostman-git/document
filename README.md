@@ -2,6 +2,7 @@
 
 * [CSS3](CSS3/README.md)
 * [JavaScript](JavaScript/README.md)
+* [TypeScript](TypeScript/README.md)
 
 # Java
 
