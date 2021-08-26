@@ -1,0 +1,29 @@
+<!--{{page}}.wxml-->
+<!-- <view wx:for="{{list}}" wx:key="id">
+  <view>{{item.id}}</view>
+  <view>{{item.title}}</view>
+  <view>{{item.author}}</view>
+  <image src="{{item.picurl}}"></image>
+  <view>-----------------------------------------------</view>
+</view> -->
+
+<my-custom my-title="这是一个标题" bind:myevent="receive">
+  <view>11</view>
+  <view slot="tag">22</view>
+</my-custom>
+
+
+<custom-ul>
+  <custom-li>A</custom-li>
+  <custom-li>B</custom-li>
+</custom-ul>
+
+
+<van-button type="primary">按钮</van-button>
+
+
+
+
+
+
+

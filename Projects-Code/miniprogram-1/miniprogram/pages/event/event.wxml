@@ -1,0 +1,12 @@
+<!--{{page}}.wxml-->
+<text>{{title}}</text>
+<view bindtap="tapClick">微信小程序开发</view>
+<view bind:tap="tapClick" data-title="微信小程序开发">微信小程序开发</view>
+
+<!-- 
+  open-type默认值无法跳转tabbar
+ -->
+<navigator url="/pages/logs/logs" open-type="switchTab">跳转到日志</navigator>
+
+<button bindtap="jumpTo">跳转到日志</button>
+<button bindtap="jumpToDemo">跳转到demo</button>

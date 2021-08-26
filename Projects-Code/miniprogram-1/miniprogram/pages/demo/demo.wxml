@@ -1,0 +1,76 @@
+<!--{{page}}.wxml-->
+<!-- 
+  hover-class：指定按下去的样式类。当 hover-class="none" 时，没有点击态效果
+  hover-stop-propagation：是否阻止本节点的祖先节点出现点击态	
+ -->
+<view class="box" hover-class="box-hover" hover-start-time="50" hover-stay-time="50">
+  微信小程序1
+  <view class="item" hover-class="item-hover" hover-stop-propagation>111111</view>  
+</view>
+
+<!-- 
+  user-select：文本是否可选，该属性会使文本节点显示为 inline-block
+  space：显示连续空格
+  decode：是否解码
+ -->
+<view class="out">
+  <text>学&lt;习&gt;</text>
+  <text user-select decode space="emsp">微信 小  程&lt;序&gt;</text>
+</view>
+
+<!-- 
+  mode 图片裁剪、缩放的模式
+    aspectFit	缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来
+  show-menu-by-longpress 长按图片显示发送给朋友、收藏、保存图片、搜一搜、打开名片/前往群聊/打开小程序（若图片中包含对应二维码或小程序码）的菜单
+ -->
+<image 
+  src="/images/20190404225110244.png" 
+  mode="aspectFit"
+  show-menu-by-longpress>
+</image>
+<image src="https://img1.baidu.com/it/u=2899834384,3550790818&fm=26&fmt=auto&gp=0.jpg"/>
+
+<!-- 
+  url：当前小程序内的跳转链接
+  open-type：跳转方式
+    redirect
+    reLaunch
+ -->
+<view>
+  <navigator url="/pages/logs/logs">跳转到日志页面</navigator>
+  <navigator url="/pages/logs/logs" open-type="redirect">跳转到日志页面</navigator>
+</view>
+
+<scroll-view class="scroll-view-y" scroll-y>
+  <view class="scroll-view-item">AAA</view>
+  <view class="scroll-view-item">BBB</view>
+  <view class="scroll-view-item">CCC</view>
+</scroll-view>
+
+<scroll-view class="scroll-view-x" scroll-x>
+  <view class="scroll-view-out">
+    <view class="scroll-view-item">AAA</view>
+    <view class="scroll-view-item">BBB</view>
+    <view class="scroll-view-item">CCC</view>
+    <view class="scroll-view-item">DDD</view>
+    <view class="scroll-view-item">EEE</view>
+  </view>
+</scroll-view>
+
+<swiper indicator-dots="true" autoplay circular>
+  <swiper-item>
+    <image src="/images/swiper_01.jpg" mode="aspectFit"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/images/swiper_02.jpg" mode="aspectFit"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/images/swiper_03.jpg" mode="aspectFit"></image>  
+  </swiper-item>
+</swiper>
+
+<button bindtap="goBack">返回</button>
+
+<view class="footer">
+1
+</view>

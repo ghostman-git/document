@@ -1,0 +1,62 @@
+/* {{page}}.wxss */
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+}
+/* 释放后无法恢复 */
+/* .box:hover {
+  background-color: blue;
+} */
+
+.box-hover {
+  background-color: blueviolet;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+}
+
+.item-hover {
+  background-color: chocolate;
+}
+
+.out {
+  color: blue;
+}
+
+.scroll-view-y {
+  height: 300px;
+  border: 1px solid red;
+}
+
+.scroll-view-y .scroll-view-item {
+  height: 150px;
+  border: 1px solid blue;
+  margin-bottom: 5px;
+}
+
+.scroll-view-x .scroll-view-out {
+  display: flex;
+}
+
+.scroll-view-x .scroll-view-item {
+  width: 100px;
+  height: 100px;
+  background-color: cornflowerblue;
+  margin-right: 5px;
+  flex: 0 0 100px;
+}
+
+image {
+  width: 100%;
+}
+
+
+
+
+.footer {
+  margin-bottom: 100px;
+}

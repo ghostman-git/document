@@ -1,0 +1,31 @@
+<!--{{page}}.wxml-->
+<button>defult</button>
+<button type="primary">primary</button>
+<button type="primary" plain>primary</button>
+<button type="warn" size="mini">warn</button>
+<button type="primary" loading>loading</button>
+
+<button type="primary" open-type="contact">contact</button>
+
+<form action="#">
+  <input auto-focus placeholder="请输入"></input>
+  <input type="idcard" placeholder="请输入身份证"></input>
+  <switch></switch>
+  <textarea></textarea>
+  <button form-type="reset">重置</button>
+  <button form-type="submit" type="primary">提交</button>
+</form>
+
+<icon type="success" size="25"></icon>
+<icon type="success_no_circle" size="25"></icon>
+<icon type="info" size="25"></icon>
+<icon type="warn" size="25"></icon>
+<icon type="waiting" size="25"></icon>
+<icon type="cancel" size="25"></icon>
+<icon type="download" size="25"></icon>
+<icon type="search" size="25"></icon>
+<icon type="clear" size="25"></icon>
+
+<progress percent="60" active show-info></progress>
+
+<map latitude="{{latitude}}" longitude="{{longitude}}"></map>

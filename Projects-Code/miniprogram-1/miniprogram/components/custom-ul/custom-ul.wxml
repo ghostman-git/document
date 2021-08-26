@@ -1,0 +1,4 @@
+<!--{{component}}.wxml-->
+<view>
+  <slot></slot>
+</view>

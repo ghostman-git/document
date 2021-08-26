@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "演示实例",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#ccc",
+  "pageOrientation": "auto"
+}

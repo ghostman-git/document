@@ -1,0 +1,15 @@
+/* {{page}}.wxss */
+button {
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  height: 80rpx;
+  border: 1px solid gray;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+
+
+
+
