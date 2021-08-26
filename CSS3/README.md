@@ -13,7 +13,7 @@
 
 ## 1.1、什么是CSS
 
-Cascading Style Sheet 层叠级联样式表
+Cascading Style Sheets 层叠级联样式表
 
 CSS表现：美化网页
 
