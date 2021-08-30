@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 方式一
+        let game = {
+            up() {
+                console.log('game up...')
+            },
+
+            down() {
+                console.log('game down...')
+            }
+
+            // ...
+        }
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+        game[methods.up] = function() {
+            console.log('新添加的up方法')
+        }
+        game[methods.down] = function() {
+            console.log('新添加的up方法')
+        }
+        console.log(game)
+        game[methods.up]()
+
+        // 方式二
+        // [] 对象动态属性key
+        let hello = Symbol('hello');
+        let person = {
+            name: 'JS',
+            [Symbol('say')]() {
+                console.log('person - symbol()...')
+            },
+            [Symbol('run')]() {
+                console.log('person - symbol()...')
+            },
+            [hello]() {
+                console.log('hello...')
+            }
+        }
+        console.log(person);
+
+        // 调用方式一
+        const symbols = Object.getOwnPropertySymbols(person);
+        person[symbols[0]]();
+
+        // 调用方式二，提前声明
+        person[hello]();
+
+    </script>
+</body>
+</html>

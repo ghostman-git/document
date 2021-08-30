@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m1 = new Map([['a', 1], ['b', '2']])
+        console.log(m1)
+
+        let m = new Map()
+
+        // 添加元素
+        m.set('name', 'ES')
+        m.set('run', function() {
+            console.log('run...');
+        })
+        let key = {name: 'JS'}
+        m.set(key, ['es5', 'es6'])
+    
+        // size
+        console.log(m.size)
+
+        // 删除元素
+        m.delete(key)
+
+        // 获取元素
+        console.log(m.get(key))
+
+        // 清空
+        m.clear() 
+
+        console.log(m)
+
+        // 遍历
+        for (const v of m) {
+            console.log(v);
+        }
+
+    </script>
+</body>
+</html>

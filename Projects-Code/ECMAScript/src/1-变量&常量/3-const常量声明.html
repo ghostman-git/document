@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const定义常量</title>
+</head>
+<body>
+    <script>
+        // 声明常量
+        const API = '/user/login'
+        console.log(API)
+
+        // 1. 一定赋初始值
+        //const A; // Uncaught SyntaxError: Missing initializer in const declaration
+
+        // 2. 常量值不允许被修改
+        const B = 'B';
+        // B = 'B1'; // Uncaught TypeError: Assignment to constant variable.
+
+        // 3. 块级作用域
+        {
+            const P = '12';
+        }
+        // console.log(P); // Uncaught TypeError: Assignment to constant variable.
+
+        // 4. 可以对于对象/数组内元素修改
+        const data = ['A', 'B', 'C'];
+        data.push('D');
+        
+        const perosn = {
+            name: 'ES6',
+            age: 23
+        }
+        perosn.age = 33;
+
+
+    </script>
+</body>
+</html>

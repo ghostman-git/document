@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 针对二维数组
+        let arr = [
+            ['name', 'js'],
+            ['age', 23]
+        ]
+        let r1 = Object.fromEntries(arr)
+        console.log(r1)
+    
+        // 针对Map
+        let m = new Map(arr)
+        let r2 = Object.fromEntries(m)
+        console.log(r2)
+
+    </script>
+</body>
+</html>

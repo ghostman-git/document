@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            console.log('p1...')
+            resolve('用户数据')
+        })
+        const p2 = new Promise((resolve, reject) => {
+            console.log('p2...')
+            // resolve('商品数据')
+            reject('出错了')
+        })
+
+        // allSettled 结果均在then响应
+        Promise.allSettled([p1, p2]).then(value => {
+            console.log('allSettled-value: ', value)
+        }, reason => {
+            console.warn('allSettled-reason: ', reason)
+        })
+
+        // all 如果出错，则响应catch
+        Promise.all([p1, p2]).then(value => {
+            console.log('all-value: ', value)
+        }, reason => {
+            console.warn('all-reason: ', reason)
+        })
+        
+        // race 是在then响应还是catch响应，由第一个
+        Promise.race([p1, p2]).then(value => {
+            console.log('race-value: ', value)
+        }, reason => {
+            console.warn('race-reason: ', reason)
+        })
+    </script>
+</body>
+</html>

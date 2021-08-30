@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 父类
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+
+            run() {
+                console.log('run...');
+            }
+        }
+
+        // 子类
+        class User extends Person {
+            constructor(name, age, sex) {
+                super(name, age)
+                this.sex = sex
+            }
+
+            run() {
+                super.run()
+                console.log('user run...')
+            }
+
+            say() {
+                console.log('user say...')
+            }
+        }
+
+        let u = new User('js', 19, '男')
+        u.run()
+        u.say()
+    </script>
+</body>
+</html>

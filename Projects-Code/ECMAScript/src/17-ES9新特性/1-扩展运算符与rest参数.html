@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        rest参数与spread扩展运算符在ES6已经引入，不过只支队与数组
+        在ES9中为对象提供了像数组一样的rest参数与扩展运算符
+     -->
+    <script>
+        // 1. 结构赋值 rest
+        function getInfo({id, ...params}) {
+            console.log(id, params)
+        }
+        getInfo({
+            id: 1,
+            name: 'js',
+            age: 23,
+            sex: '男'
+        })
+
+        // 2. 扩展符应用到对象
+        let person = {name: 'ES', age: 18};
+        let user = {name: 'JS', ...person, sex: '男'};
+        console.log(user); // {name: "ES", age: 18, sex: "男"}
+    </script>
+</body>
+</html>

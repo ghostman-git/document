@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值，被成为结构赋值
+
+        // 1. 数组结构
+        const DATA = ['Java', 'JavaScript', 'Vue', 'MySQL'];
+        let [java, js, vue, mysql] = DATA;
+        console.log(java, js, vue, mysql); // Java JavaScript Vue MySQL
+
+        // 2. 对象结构
+        const PERSON = {
+            name: 'JS',
+            age: 23,
+            say() {
+                console.log('在讲话...')
+            }
+        };
+        let {name, age, say} = PERSON;
+        console.log(name, age); // JS 23
+        say();
+        // 别名
+        let {say: hello} = PERSON;
+        hello();
+    </script>
+</body>
+</html>

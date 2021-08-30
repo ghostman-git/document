@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6引入rest参数，用于获取函数的实参，用于替代arguments
+
+        // ES5
+        function date(p) {
+            console.log('p:', p)
+            console.log('arguments:', arguments)
+        }
+        date(1, 'js', ['a', 2])
+
+        // ES6，rest必须定义到参数最后位置
+        function data(p, ...args) {
+            console.log('p:', p)
+            console.log('args:', args)
+        }
+        data(1, 'js', ['a', 2])
+    </script>
+</body>
+</html>

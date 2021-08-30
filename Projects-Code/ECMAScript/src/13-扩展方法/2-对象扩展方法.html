@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 判断两个值是否完全相等
+        console.log(Object.is('1', '1')) // true
+        console.log(Object.is(1, '1')) // false
+        console.log(Object.is(-0, +0)) // false
+        console.log(Object.is(NaN, NaN)) // true
+
+        // 2. Object.assign 对象的合并，也可扩展符
+        let u1 = {
+            name: 'js',
+            age: 23
+        }
+        let u2 = {
+            name: 'ES',
+            sex: '男'
+        }
+        console.log(Object.assign(u1, u2))
+        console.log(u1)
+
+        // 3. Object.setPrototypeOf 设置原型对象
+        let user = {
+            name: 'JS'
+        }
+        let _prototype = {
+            run() {
+                console.log('run...')
+            }
+        }
+        Object.setPrototypeOf(user, _prototype)
+        console.log(user)
+        user.run()
+    </script>
+</body>
+</html>

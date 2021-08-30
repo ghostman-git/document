@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6允许使用「箭头」（=>）来定义函数
+
+        // 声明箭头函数
+        let fun = (a, b) => {
+            return a + b;
+        }
+        fun(1, 3);
+
+        // 1. this是静态的，this始终指向函数声明时所在作用域下的this的值。（绑定上下文环境）
+        function getName1() {
+            console.log(this.name);
+        }
+        let getName2 = () => {
+            console.log(this.name)
+        }
+        // 准备演示数据
+        window.name = 'JavaScript'
+        const person = {
+            name: 'ES6',
+
+            getName1,
+            getName2,
+
+            getName3() {
+                // (...)()立即执行
+                let gg = (() => {
+                    console.log(this.name)
+                })();
+            }
+        }
+        // 直接调用
+        getName1();
+        getName2();
+
+        // call方式调用
+        getName1.call(person);
+        getName2.call(person);
+        // 与call等价
+        person.getName1()
+        person.getName2()
+
+        // this指向person
+        person.getName3()
+
+        // 2。不能作为构造实例化对象
+        let User = (name, age) => {
+            console.log(this);
+            this.name = name;
+            this.age = age;
+        }
+        //let user = new User('JS', 10); // Uncaught TypeError: User is not a constructor
+        
+        // 3. 不能使用arguments变量
+        let fn = () => {
+            console.log(arguments)
+        }
+        //fn(1, 3, 4); // Uncaught ReferenceError: arguments is not defined
+
+        // 4. 箭头函数的简写
+        // 4-1. 省略小括号，当形参有且只有一个
+        let cc = n => {
+            console.log('n:', n)
+        }
+        cc(1);
+        // 4-2. 省略花括号，当逻辑代码只有一条语句（如果有return也要省略）
+        let pow = n => n * n;
+        let dd = n => console.log('n:', n);
+        dd(2);
+
+    </script>
+</body>
+</html>

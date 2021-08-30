@@ -2,6 +2,7 @@
 
 * [CSS3](CSS3/README.md)
 * [JavaScript](JavaScript/README.md)
+* [ECMAScript](ECMAScript/README.md)
 * [TypeScript](TypeScript/README.md)
 * [MiniProgram](MiniProgram/README.md)
 

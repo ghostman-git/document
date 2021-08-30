@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        // 1. 数组的合并
+        let arr = ['Vue', 'React'];
+        // let result = ['ES6'].concat(arr);
+        let result = ['ES6', ...arr, 'MySQL'];
+        console.log('result: ', result); // ["ES6", "Vue", "React", "MySQL"]
+
+        // 2. 数组的克隆（浅克隆）
+        const data = ['J', 'A', 'V', 'A'];
+        const copy = [...data];
+        data.push['S'];
+        console.log(copy);
+
+        // 3. 伪数组变为真正的数组
+        const item = document.querySelectorAll('div');
+        console.log(Array.isArray(item));
+        const items = [...item];
+        console.log(Array.isArray(items));
+    </script>
+</body>
+</html>

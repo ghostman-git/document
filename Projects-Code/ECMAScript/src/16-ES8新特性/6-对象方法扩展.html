@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name: 'js',
+            age: 23,
+            hobbies: ['js', 'java', 'mysql'],
+            run() {
+                console.log('run...')
+            }
+        }
+
+        // 1. keys
+        console.log(Object.keys(person))
+        // 2. values
+        console.log(Object.values(person))
+        // 3. entries
+        console.log(Object.entries(person))
+        console.log(new Map(Object.entries(person)))
+        // 4. getOwnPropertyDescriptors
+        console.log(Object.getOwnPropertyDescriptors(person))
+        Object.create(null, {
+            name: {
+                value: 'js',
+                writable: true,
+                configurable: true,
+                enumerable: true
+            }
+        })
+    </script>
+</body>
+</html>

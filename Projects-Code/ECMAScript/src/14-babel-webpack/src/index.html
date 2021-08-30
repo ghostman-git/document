@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. 初始化
+            npm init -y
+        2. 安装依赖
+            cnpm i webpack webpack-cli babel-cli html-webpack-plugin webpack-dev-server -D
+        3. webpack.config.js
+            const path = require('path')
+            const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+            module.exports = {
+                entry: './src/app.js',
+
+                output: {
+                    // path: './dist',
+                    path: path.resolve(__dirname, 'dist'),
+                    filename: 'bundle.js'
+                },
+
+                plugins: [
+                    new HtmlWebpackPlugin()
+                ]
+            }
+        4. npm run serve
+            "scripts": {
+                "build": "webpack",
+                "serve": "webpack serve --mode production",
+            },
+     -->
+</body>
+</html>

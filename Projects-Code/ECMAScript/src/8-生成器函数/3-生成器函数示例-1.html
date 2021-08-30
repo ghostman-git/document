@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 异步编程
+        // 1s后输出11，2s后输出22，3s后输出33
+
+        function a() {
+            setTimeout(() => {
+                console.log(11)
+                iter.next();
+            }, 1000)
+        }
+        function b() {
+            setTimeout(() => {
+                console.log(22)
+                iter.next();
+            }, 2000)
+        }
+        function c() {
+            setTimeout(() => {
+                console.log(33)
+                iter.next();
+            }, 3000)
+        }
+
+        function* gen() {
+            yield a();
+            yield b();
+            yield c();
+        }
+
+        let iter = gen();
+        iter.next();
+
+    </script>
+</body>
+</html>
