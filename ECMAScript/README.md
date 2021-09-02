@@ -179,8 +179,9 @@ const PERSON = {
         name: 'dev'
     }
 };
-let {name, age, say, dept: {name: deptName, desc = '描述默认值'}} = PERSON;
+let {name, age, say, dept, dept: {name: deptName, desc = '描述默认值'}} = PERSON;
 console.log(name, age, deptName, desc); // JS 23 dev 描述默认值
+console.log(dept) // 注意以上
 say();
 // 别名
 let {say: hello} = PERSON;
