@@ -21,10 +21,14 @@
             age: 23,
             say() {
                 console.log('在讲话...')
+            },
+            // 嵌套对象
+            dept: {
+                name: 'dev'
             }
         };
-        let {name, age, say} = PERSON;
-        console.log(name, age); // JS 23
+        let {name, age, say, dept: {name: deptName, desc = '描述默认值'}} = PERSON;
+        console.log(name, age, deptName, desc); // JS 23 dev 描述默认值
         say();
         // 别名
         let {say: hello} = PERSON;
