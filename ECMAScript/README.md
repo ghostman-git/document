@@ -425,7 +425,19 @@ console.log(Array.isArray(items));
 
 ES6引入了一种新的原始数据类型Symbol，表示独一无二的值。它是JavaScript语言的第七种数据类型，是一种类似于字符串的数据类型。
 
-Number、String、Boolean、Null、Object、undefined、Symbol
+Number、String、Boolean、Null、Object、undefined、Function、Symbol
+
+```js
+let gettype = Object.prototype.toString
+gettype.call('aaaa') // [object String]
+gettype.call(2222) // [object Number]
+gettype.call(true) // [object Boolean]
+gettype.call(undefined) // [object Undefined]
+gettype.call(null) // [object Null]
+gettype.call({})  // [object Object]
+gettype.call([]) // [object Array]
+gettype.call(function(){}) // [object Function]
+```
 
 Symbol特点：
 
@@ -507,7 +519,7 @@ person[symbols[0]]();
 person[hello]();
 ```
 
-## 7-3、Symbo内置值
+## 7-3、Symbol内置值
 
 ES6提供了11个内置的Symbol值，指向语言内部使用的方法。
 
