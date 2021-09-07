@@ -48,5 +48,19 @@ cd WhiteSur-gtk-theme
 sudo apt install gir1.2-gtop-2.0 lm-sensors
 git clone https://github.com/corecoding/Vitals.git
 cd Vitals
-
 ```
+
+# Macast
+
+> https://github.com/xfangfang/Macast/blob/main/docs/Development.md
+
+## libva-wayland2 | libmodplug1
+
+>  https://packages.ubuntu.com/zh-tw/impish/amd64/libva-wayland2/download
+
+`deb http://cz.archive.ubuntu.com/ubuntu impish main universe`
+
+## mpv
+
+> https://launchpad.net/~mc3man/+archive/ubuntu/mpv-tests
+
