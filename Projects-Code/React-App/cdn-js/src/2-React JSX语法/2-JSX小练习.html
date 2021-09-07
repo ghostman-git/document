@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. 准备容器 -->
+    <div id="root"></div>
+
+    <!-- 2. 引入js依赖 -->
+    <!-- 2-1. 引入react核心库 -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <!-- 2-2. 引入react-dom，用于支持react操作DOM -->
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <!-- 2-3. 引入babel，用于将jsx转为js -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 3. type一定要写babel -->
+    <script type="text/babel">
+        const data = ['Angular', 'React', 'Vue']
+
+        /* 
+        1. 表达式：一个表达式会产生一个值
+            * a
+            * a+b
+            * demo(1)
+            * arr.map()
+            * function test() {}
+        2. 语句（代码）
+            * if () {}
+            * for () {}
+            * switch () {}
+            *  
+        
+        */
+
+        // 4. 创建虚拟DOM，此处一定不要写引号
+        const VDOM = (
+            <div>
+                <h3>前端框架列表</h3>
+                <ul>
+                    {
+                        data
+                    }
+                    {
+                        data.map((item, index) => {
+                            return <li key={index}>{item}</li>
+                        })
+                    }
+                </ul>
+            </div>
+        )
+
+        // 5. 渲染虚拟DOM到页面
+        ReactDOM.render(VDOM, document.getElementById('root'))
+
+    </script>
+</body>
+</html>

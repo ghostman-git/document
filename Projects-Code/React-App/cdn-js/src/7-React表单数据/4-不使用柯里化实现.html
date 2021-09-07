@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.zhimg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.zhimg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        class Login extends React.Component {
+
+            state = {
+                username: '',
+                password: ''
+            }
+           
+            handleSubmit = (event) => {
+                event.preventDefault()
+            }
+
+
+            formDataChange = (event, typeName) => {
+                console.log(typeName, ': ', event.target.value)
+                this.setState({
+                    [typeName]: event.target.value
+                })
+            }
+
+            render() {
+                return (
+                    <form onSubmit={this.handleSubmit}>
+                        <div>
+                            <label>用户名：</label>
+                            <input type="text" name="username" onChange={event => this.formDataChange(event, 'username')} />
+                        </div>
+                        <div>
+                            <label>密　码：</label>
+                            <input type="password" name="password" onChange={event => this.formDataChange(event, 'password')} />
+                        </div>
+                        <div>
+                            <button>登录</button>
+                        </div>
+                    </form>
+                )
+            }
+        }
+
+        ReactDOM.render(<Login />, document.getElementById('root'))
+    </script>
+</body>
+</html>

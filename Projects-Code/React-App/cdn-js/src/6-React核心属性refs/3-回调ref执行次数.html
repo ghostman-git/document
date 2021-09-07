@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.zhimg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.zhimg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component {
+
+            state = {
+                value: ''
+            }
+
+            showData = () => {
+                const {input1} = this
+                this.setState({
+                    value: input1.value
+                })
+            }
+
+            bindRef = (c) => {
+                console.log('@ ', c);
+                this.input1 = c
+            }
+
+            render() {
+                return (
+                    <div>
+                        {/* ref回调如果是以内敛函数形式，再更新时会触发两次，第一次是null */}
+                        {/* <input ref={c => {console.log('@ ', c);this.input1 = c}} type="text" placeholder="点击按钮提示数据" /> */}
+
+                        {/* 类绑定方式，避免两次调用 */}
+                        <input ref={this.bindRef} type="text" placeholder="点击按钮提示数据" />
+
+                        <button onClick={this.showData}>点我提示</button>
+                        <div>结果：{this.state.value}</div>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Demo />, document.getElementById('root'))
+    </script>
+</body>
+</html>

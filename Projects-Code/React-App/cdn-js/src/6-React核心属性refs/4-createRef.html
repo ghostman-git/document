@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.zhimg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.zhimg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component {
+
+            // 创建容器
+            myRef = React.createRef()
+
+            showData = () => {
+                alert(this.myRef.current.value)
+            }
+
+            render() {
+                return (
+                    <div>
+                        <input ref={this.myRef} type="text" placeholder="点击按钮提示数据" />
+                        <button onClick={this.showData}>点我提示</button>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Demo />, document.getElementById('root'))
+    </script>
+</body>
+</html>

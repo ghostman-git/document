@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // 创建组件
+        class Weather extends React.Component {
+            constructor() {
+                super()
+
+                this.state = {
+                    isHot: true
+                }
+
+                // 方式一：bind
+                //this.changeWeather = this.changeWeather.bind(this)
+                this.change = this.changeWeather.bind(this)
+            }
+
+            changeWeather() {
+                console.log(this.state.isHot)
+            }
+
+            /* 方式三：箭头函数（推荐） */
+            changeWeather = () => {
+                console.log(this.state.isHot)
+            }
+
+            render() {
+                console.log(this)
+                const {isHot} = this.state
+                return (
+                    /* <h2 onClick={this.change}>今天的天气很{isHot ? '炎热' : '凉爽'}</h2> */
+
+                    /* 方式二：()=>{} 箭头函数 */
+                    /* <h2 onClick={() => this.changeWeather()}>今天的天气很{isHot ? '炎热' : '凉爽'}</h2> */
+
+                    <h2 onClick={this.changeWeather}>今天的天气很{isHot ? '炎热' : '凉爽'}</h2>
+                )
+            }
+        }
+
+        ReactDOM.render(<Weather />, document.getElementById('root'))
+    </script>
+</body>
+</html>

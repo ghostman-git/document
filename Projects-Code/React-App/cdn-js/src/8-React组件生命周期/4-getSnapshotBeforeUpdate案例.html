@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            width: 200px;
+            height: 120px;
+            overflow: auto;
+            background-color: aqua;
+        }
+
+        .list > .item {
+            height: 30px;
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.zhimg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.zhimg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        class ItemsList extends React.Component {
+
+            state = {
+                data: []
+            }
+
+            componentDidMount() {
+                setInterval(() => {
+                    const {data} = this.state
+
+                    // 模拟生成一条数据
+                    const item = `新闻${data.length + 1}`
+
+                    this.setState({
+                        data: [item, ...data]
+                    })
+                }, 800)
+            }
+
+            getSnapshotBeforeUpdate() {
+                return this.refs.list.scrollHeight
+            }
+
+            componentDidUpdate(presProps, presState, snapshotValue) {
+                this.refs.list.scrollTop += this.refs.list.scrollHeight - snapshotValue
+            }
+
+            render() {
+                return (
+                    <div className="list" ref="list">
+                        {
+                            this.state.data.map((item, index) => {
+                                return <div className="item" key={index}>{item}</div>
+                            })
+                        }
+                    </div>
+                )
+            }
+        }
+       
+        ReactDOM.render(<ItemsList />, document.getElementById('root'))
+    </script>
+</body>
+</html>

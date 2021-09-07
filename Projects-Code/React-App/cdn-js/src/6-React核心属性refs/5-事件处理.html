@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.zhimg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.zhimg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.zhimg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component {
+            /* 
+                1. 通过onXxx属性指定事件处理函数，注意大小写
+                    * React使用的是自定义（合成）事件，而非使用原生DOM事件
+                    * React中的事件是通过事件委托方式处理的（委托给组件最外层的元素）
+                2. 通过event.target得到发生事件的DOM元素对象
+            */
+
+            showData = (event) => {
+                alert(event.target.value)
+            }
+
+            render() {
+                return (
+                    <div>
+                        <input type="text" placeholder="失去按钮提示数据" onBlur={this.showData} />
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Demo />, document.getElementById('root'))
+    </script>
+</body>
+</html>
